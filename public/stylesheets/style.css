@@ -1,0 +1,17 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.userAvatar{
+	width:80px;
+	height:100px;
+}
+.userAvatar img{
+	width:100%;
+	height:100%;
+}

@@ -1,0 +1,38 @@
+extends layout
+
+block content
+	- if (typeof(userInfo) != null)
+		!= "<script type='text/javascript'>"
+		!= "var userInfo = new Array();"
+			!= "userInfo.push({ID:" + userInfo.ID + ", Name:'" + userInfo.Name + "', Surname:'" + userInfo.Surname + "', Username:'"+ userInfo.Username +"', Email:'" + userInfo.Email +"', Avatar:'" + userInfo.Avatar + "'});"
+		!= "</script>"
+	h1 Edit Profile
+	if (notif)
+		p(class='notif')= notif
+	div
+		form(action='/editprofile', method='post', class='editUser', enctype='multipart/form-data')
+			input(type='hidden', id='userID', name='userID', value='#{userInfo.ID}')
+			p
+				label(class='text edit') First Name:
+				input(type='text', name='editName', id='editName', value='#{userInfo.Name}')
+			p
+				label(class='text edit') Last Name:
+				input(type='text' , name='editSurname', id='editSurname', value='#{userInfo.Surname}')
+			p
+				label(class='text edit') Avatar:
+				p(class='userAvatar')
+					img(src='#{userInfo.Avatar}', id='imageHolder', name='imageHolder')
+				input(type='file', name='editAvatar', id='editAvatar')
+			p
+				label(class='text edit') Username:
+				input(type='text' , name='editUsername', id='editUsername', value='#{userInfo.Username}')
+			p
+				label(class='text edit') Password:
+				input(type='password', name='editPassword', id='editPassword')
+			p
+				label(class='text edit') Repeat Password:
+				input(type='password' , name='editPassword2', id='editPassword2')
+
+			p: button(type='submit', class='button') Update User Info
+			p
+			a(href='/', class='button') Back

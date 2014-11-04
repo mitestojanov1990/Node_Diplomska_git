@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block title %}Messages{% endblock %}
+
+{% block content %}
+<h1>All messages</h1>
+<ul>
+    {% for message in messages %}
+    <li class="message">
+        <p>
+            <label class="text">Messge:</label>
+            <label>{{ message.message }}</label>
+        </p>
+        <p>
+            <label class="text">Date:</label>
+            <label>{{ message.date }}</label>
+        </p>
+        <br />
+    </li>
+    {% endfor %}
+    <p><a href="/messages/new" class="button">Compose message</a></p>
+    <p><a href="/" class="button">Back</a></p>
+</ul>
+{% endblock %}

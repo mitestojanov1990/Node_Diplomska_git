@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+<h1>logged</h1>
+<a href="/logout">Logout</a>
+<br/>
+<a href="/users">Users List</a>
+<br/>
+<a href="/editprofile">Edit Profile</a>
+<br/>
+<div class="newPost">
+	<input type="text" class="textInput" />
+	<input type="button" class="textSend" value="Post" onclick="NewPost()" />
+	<div class="content">
+	</div>
+</div>
+{% endblock %}
